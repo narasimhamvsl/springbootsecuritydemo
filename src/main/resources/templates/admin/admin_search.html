@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+	th:replace="~{admin/base::layout(~{::section})}">
+<head>
+<meta charset="utf-8" />
+<title>Sign-Up | User Registration</title>
+</head>
+<body>
+	<section>
+		<div class="row">
+
+			<div class="col-md-8 offset-md-2">
+
+				<div class="my-card mt-1">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">NAME</th>
+								<th scope="col">ROLE</th>
+								<th scope="col">Mobile</th>
+								<th scope="col">EMAIL</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td><span th:text="${user.name}"></span></td>
+								<td><span th:text="${user.role}"></span></td>
+								<td><span th:text="${user.mobile}"></span></td>
+								<td><span th:text="${user.email}"></span></td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</section>
+</body>
+</html>

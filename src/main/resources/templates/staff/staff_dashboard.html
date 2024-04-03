@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+	th:replace="~{staff/base::layout(~{::section})}">
+<head>
+<meta charset="utf-8" />
+<title>Sign-Up | User Registration</title>
+</head>
+<body>
+	<section>
+		<div class="row">
+
+			<p>
+			<h2>User email <span th:text="${user.email}"></span></h2>
+
+		</div>
+	</section>
+</body>
+</html>

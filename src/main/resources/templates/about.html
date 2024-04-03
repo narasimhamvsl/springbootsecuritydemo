@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+	th:replace="~{base::layout(~{::section})}" >
+<head>
+<meta charset="utf-8" />
+<title>This is aboutUs Page.</title>
+</head>
+<body>
+	<section class="banner text-center">
+
+		<div class="container text-center">
+			<img src="" style="width: 80px;" th:src="@{/img/working.png}"
+				alt="" />
+		</div>
+		<div>
+			<h1>About Us</h1>
+			<h2>email : support@test.com</h2>
+			<div class="text-left">
+				<ul>
+					<li>Easy Payments</li>
+					<li>Any where access</li>
+					<li>Supports Credit Card payments</li>
+					<li>UPI Payments</li>
+					<li>Reports</li>
+					<li>On Demand Reports</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/" th:replace="~{base::layout(~{::section})}" >
+  <head>
+    <meta charset="utf-8"  />
+    <title>This is Home Page.</title>
+  </head>
+  <body>
+  	<section class="banner d-flex justify-content-center align-items-center">
+		<div class="text-center">
+			<h1 class="font-weight-bold">Lease Property Smart Payments Portal</h1>
+			<p>Online portal ro provide easy payments services. Digital paper less convenient services 24/7. Download reports of payments done previously at click of a button. Notification reminders for registered customers time to time.</p>
+			<a href="" th:href="@{/signup}"><button class="btn bg-primary btn-lg text-white" href="@Url.Action("/signup")">Get Started</button></a>
+		</div>
+  	</section>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="utf-8" />
+<title>Sign-Up | User Registration</title>
+</head>
+<body>
+	<section>
+		<div class="row">
+
+			<div class="col-md-8 offset-md-2">
+
+				<div class="my-card mt-1">
+
+					<!-- Alert - success / failure - start -->
+					<div th:if="${session.message}"
+						th:classappend="${session.message.type}"
+						class="alert alert-primary" role="alert">
+
+						<p th:text="${session.message.content}"></p>
+
+						<th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>
+					</div>
+
+					<!-- Alert - success / failure - stop -->
+					<div class="container text-center">
+						<img src="" style="width: 80px;"
+							th:src="@{/img/register_icon.png}" alt="" />
+					</div>
+
+					<h3 class="text-center">Register Here</h3>
+					<form novalidate action="" th:action="@{/do_register}" method="post"
+						th:object="${user}">
+
+						<!-- name field -->
+						<div class="form-group ">
+							<label for="name_field">Your Name</label>
+							 <input name="name" 
+							 	type="text"
+								class="form-control" 
+								th:classappend="${#fields.hasErrors('name') ? 'is-invalid':''}" 
+								id="name_field" 
+								aria-describedby="nameHelp"
+								placeholder="Enter here" 
+								required="required"
+								th:value="${user.name}" 
+								/>
+
+							<div 
+							class="invalid-feedback" 
+							th:each = "e : ${#fields.errors('name')}" 
+							th:text="${e}">Please provide a valid name.
+							</div>
+
+						</div>
+
+						<!-- email field -->
+						<div class="form-group ">
+							<label for="email_field">E-mail:</label> 
+							<input type="text"
+								class="form-control" 
+								th:classappend="${#fields.hasErrors('email') ? 'is-invalid':''}" 
+								id="name_field"
+								aria-describedby="emailHelp" 
+								placeholder="Enter here"
+								required="required" 
+								th:value="${user.email}" 
+								name="email" />
+							<div 
+							class="invalid-feedback" 
+							th:each = "e : ${#fields.errors('email')}" 
+							th:text="${e}">
+							Please provide a valid email address.
+							
+							</div>								
+						</div>
+
+						<!-- password field -->
+						<div class="form-group">
+							<label for="password_field">Password</label> 
+							<input type="text"
+								class="form-control"
+								th:classappend="${#fields.hasErrors('password') ? 'is-invalid':''}"  
+								id="password_field"
+								aria-describedby="passwordHelp" 
+								placeholder="Enter here"
+								required="required" 
+								name="password" />
+							<div 
+							class="invalid-feedback" 
+							th:each = "e : ${#fields.errors('password')}" 
+							th:text="${e}">Please provide a valid password.
+							</div>
+						</div>
+
+						<!-- mobile field -->
+						<div class="form-group">
+							<label for="mobile_field">Your Mobile Number</label> 
+							<input
+								type="text" 
+								class="form-control" 
+								th:classappend="${#fields.hasErrors('mobile') ? 'is-invalid':''}"  								
+								id="password_field"
+								aria-describedby="mobileHelp" 
+								placeholder="Enter here"
+								required="required" 
+								th:value="${user.mobile}" 
+								name="mobile" />
+							<div 
+							class="invalid-feedback" 
+							th:each = "e : ${#fields.errors('mobile')}" 
+							th:text="${e}">Please provide a valid Mobile number.
+							</div>
+						</div>
+
+						<div class="form-group form check text-center">
+							<input type="checkbox" name="aggrement" class="form-check-input"
+								id="aggrement"> <label for="aggrement">Accept
+								terms and conditions</label>
+						</div>
+
+						<div class="container text-center">
+							<button type="submit" class="btn bg-primary text-white">Submit</button>
+							<button type="reset" class="btn btn-warning text-white">Reset</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</section>
+</body>
+</html>
